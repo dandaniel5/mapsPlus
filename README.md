@@ -44,7 +44,7 @@ front
  +    fetch api/userObj 
  +    )
 back api/userObj from db
-   будет ккнопка добавить место
+  будет ккнопка добавить место
   дальше бот справшивает
   нащвание
   фотки
@@ -69,3 +69,19 @@ db mongo
  + }
  + 
 
+
+
+```to lockal start front
+npm run dev
+```
+
+```to lockal start python
+```
+
+```use docker-compose.dev.yml and Dockerfile.2 files to dev
+docker compose -f docker-compose.dev.yml up --build
+```
+
+```use docker-compose.yml and Dockerfile files to prod
+docker compose -f docker-compose.dev.yml up --build
+```
