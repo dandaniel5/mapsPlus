@@ -52,7 +52,7 @@ back api/userObj from db
   рейтинг
    
  
-db
+db mongo
  + userObj{
  +  спиок точек геоджейсон 
  +  
