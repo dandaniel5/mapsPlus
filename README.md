@@ -85,3 +85,7 @@ docker compose -f docker-compose.dev.yml up --build
 ```use docker-compose.yml and Dockerfile files to prod
 docker compose -f docker-compose.dev.yml up --build
 ```
+
+no nginx
+ cd data/nginx 
+ nginx -c nginx.conf

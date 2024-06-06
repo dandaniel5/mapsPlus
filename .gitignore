@@ -26,3 +26,7 @@ go.work.sum
 mongo
 /back/__pycache__
 /back/app.log
+data
+back/.env
+front/.DS_Store
+.DS_Store

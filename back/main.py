@@ -132,8 +132,8 @@ async def favicon():
 async def root(tg_id: str):
     userObj = await db.Users.find_one({"tg_id": tg_id}, {"_id": 0})
     if not userObj:
-        raise HTTPException(status_code=404, detail="User not found")
-
+        userObj = await db.Users.insert_one({"tg_id": tg_id})
+    
     return JSONResponse(content={
         "message": "Hello World",
         "userObj": userObj
