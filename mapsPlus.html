@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="main.css" />
+        <script src="./script.js"></script>
+        <link rel="stylesheet" href="canvaCss.css" />
+        <!-- Shoutout to PavelDoGreat for the amazing work on WebGL Fluid Simulation and to Benjamin Koehler for being awesome!
+
+        WebGL Fluid Simulation - MIT - https://github.com/PavelDoGreat/WebGL-Fluid-Simulation
+
+        Future Sticky Navigation with Glass Effect - MIT - https://codepen.io/codesuey/pen/abPEyjo -->
+
+        <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/favicons/apple-touch-icon.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicons/favicon-32x32.png"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicons/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/favicons/site.webmanifest" />
+        <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
+        <title>code.❤️</title>
+
+        <script>
+            window.ga =
+                window.ga ||
+                function () {
+                    (ga.q = ga.q || []).push(arguments);
+                };
+            ga.l = +new Date();
+            ga("create", "UA-105392568-1", "auto");
+            ga("send", "pageview");
+        </script>
+        <style></style>
+    </head>
+
+    <body>
+        <header id="myHeader" class="">
+            <svg
+                id="logo"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 714.6 401.1"
+            >
+                <image xlink:href="./btn_logo.svg" width="100%" height="100%" />
+            </svg>
+            <nav width="550" max-width="550">
+                <a href="#mapsPlus">mapsPlus</a>
+                <a href="#stage1">stage 1</a>
+                <a href="#stage2">stage 2</a>
+                <a href="#Tokens">Tokens</a>
+                <button id="openmenu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </header>
+        <div id="page" class="">
+            <section>
+                <div id="mapsPlus"></div>
+                <script>
+                    window.ga =
+                        window.ga ||
+                        function () {
+                            (ga.q = ga.q || []).push(arguments);
+                        };
+                    ga.l = +new Date();
+                    ga("create", "UA-105392568-1", "auto");
+                    ga("send", "pageview");
+                </script>
+                <script>
+                    window.addEventListener("DOMContentLoaded", (event) => {
+                        const heroMainTitle =
+                            document.querySelector(".centered-text-two"); // Выбираем блок с классом hero__main__title
+
+                        // Функция, которая будет обрабатывать событие прокрутки
+                        function handleScroll() {
+                            const heroTop =
+                                heroMainTitle.getBoundingClientRect().top; // Получаем расстояние от верхней границы блока до верха окна просмотра
+                            const windowHeight = window.innerHeight; // Получаем высоту окна просмотра
+
+                            // Проверяем, находится ли верхняя граница блока в пределах отступа в 30 пикселей от верха и до нижней границы окна просмотра
+                            if (heroTop >= 0 && heroTop <= windowHeight) {
+                                // Если элемент находится в видимой области, добавляем класс для запуска анимации
+                                heroMainTitle.classList.add("in-view");
+                            } else {
+                                // Если элемент скрыт за пределами видимой области, убираем класс
+                                heroMainTitle.classList.remove("in-view");
+                            }
+                        }
+
+                        // Добавляем обработчик события прокрутки окна
+                        window.addEventListener("scroll", handleScroll);
+
+                        // Создаем функцию, которая будет выполняться после начала движения мыши или нажатия на сенсорный экран
+                        function handleMouseMoveOrTouchStart() {
+                            // Выполняем какие-то действия
+                            // console.log(
+                            //     "Пользователь начал двигать мышь или нажал на сенсорный экран",
+                            // );
+
+                            // Удаляем обработчики событий, чтобы функция больше не выполнялась
+                            heroMainTitle.classList.add("in-view");
+                        }
+
+                        // Добавляем обработчик события для движения мыши
+                        document.addEventListener(
+                            "mousemove",
+                            handleMouseMoveOrTouchStart,
+                        );
+
+                        // Добавляем обработчик события для нажатия на сенсорный экран
+                        document.addEventListener(
+                            "touchstart",
+                            handleMouseMoveOrTouchStart,
+                        );
+                    });
+                </script>
+                <h2 style="z-index: 12" class="centered-text-two">mapsPlus</h2>
+                <dotlottie-player
+                    src="touhcmove.lottie"
+                    background="transparent"
+                    speed="1"
+                    style="
+                        width: 10dvh;
+                        height: 10dvh;
+                        position: absolute;
+                        bottom: 20dvh;
+                        left: 45%;
+                        transform: translateX(-50%);
+                        z-index: 21;
+                        pointer-events: none;
+                    "
+                    direction="1"
+                    playMode="bounce"
+                    autoplay
+                    loop="2"
+                >
+                </dotlottie-player>
+                <dotlottie-player
+                    src="scroll.lottie"
+                    background="transparent"
+                    speed="1"
+                    style="
+                        width: 10dvh;
+                        height: 10dvh;
+                        position: absolute;
+                        bottom: 20dvh;
+                        left: 55%;
+                        transform: translateX(-50%);
+                        z-index: 21;
+                        pointer-events: none;
+                    "
+                    direction="1"
+                    playMode="normal"
+                    autoplay
+                    loop="3"
+                >
+                </dotlottie-player>
+
+                <!-- <h3>JavaScript Next.js Node.js</h3> -->
+
+                <canvas
+                    id="canvas1"
+                    width="100dvw"
+                    height="100dvh"
+                    style="position: absolute; top: 0; left: 0; z-index: 10"
+                ></canvas>
+
+                <script src="./canvaScript.js"></script>
+            </section>
+
+            <section
+                id="info"
+                class="info-section"
+                style="
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    position: relative;
+                "
+            >
+                <p>
+
+                <h2  style="
+                                    padding: 2rem;
+                                "> mapsPlus</h1>
+                    mini app для я просмотра локальных отзывов от
+                    своиз друзей на карте
+                </p>
+            </section>
+
+            <section
+                id="stage1"
+                class="info-section"
+                style="
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    position: relative;
+                "
+            >
+                <p>
+
+                <h2  style="
+                                    padding: 2rem;
+                                "> за 2 дня Рализовано с нуля</h1>
+
+
+                                    <h2  style="
+                                                        padding: 2rem;
+                                                    ">сейчас уже работает</h4>
+
+                      <br>
+                          перслать контакит или собщение от юзера для
+                    добовления с лист контактов поделиться локацией
+                      <br>
+                    создать точку отзыв миниап с картой fast-api next.js mongo
+
+                </p>
+            </section>
+
+            <section
+                id="stage2"
+                class="info-section"
+                style="
+                    width: 100%;
+                    height: 100%;
+                    overflow: hidden;
+                    position: relative;
+                "
+            >
+                <p>
+
+                <h2  style="
+                    padding: 2rem;
+                ">  stage 2 (not ready) </h2>
+                <br>
+
+
+                    добавить слои карты
+
+                    балансы
+<br>
+                    виралки это
+                    - подписка на слой инфлюенсера через шер
+                    - рсказать другу о посещенной локации
+                    - топы среди своего круга:
+                        - постели больше всех мест
+                        - позвал больше всех друзей
+                    - очивки посетил 10 мест
+                    - оставил 10 отзывов
+
+                </p>
+            </section>
+
+
+            <section
+                            id="stage2"
+                            class="info-section"
+                            style="
+                                width: 100%;
+                                height: 100%;
+                                overflow: hidden;
+                                position: relative;
+                            "
+                        >
+                            <p>
+                            <h2  style="
+                                padding: 2rem;
+                            ">  Tockens </h2>
+                            <br>
+
+                            <br>
+                                поставил новую точку + 1
+                            <br>
+                                подтвердил что чужат точка поставлена врено - автор точки + 1
+                            <br>
+                                отсавил отзвы на существующую точку + 1
+                            <br>
+                                точка получила 10 сторпонних отзывов автор точки + 10  и каждый кто оставил отзвы +1
+                            <br>
+
+            <br>
+
+                            </p>
+                        </section>
+
+
+            <footer>
+                <!-- <div class="container"> -->
+                <!-- <section> -->
+                <p>
+                    Designed and developen by
+                    <a href="https://t.me/Shugaf433"> Code.❤️</a>
+                </p>
+
+                <p>
+                    All rights reserved. Materials used under the MIT license.
+                </p>
+                <p>
+                    Shoutout to Benjamin Koehler, PavelDoGreat and Alvaro
+                    Montoro for being awesome!
+                </p>
+
+                <p>
+                    <a href="https://codepen.io/codesuey/pen/abPEyjo"
+                        >Future Sticky Navigation with Glass Effect</a
+                    >
+                    - by Benjamin Koehler
+                </p>
+
+                <p>
+                    <a
+                        href="https://github.com/PavelDoGreat/WebGL-Fluid-Simulation"
+                        >WebGL Fluid Simulation</a
+                    >
+                    - by PavelDoGreat
+                </p>
+
+                <p>
+                    <a href="https://codepen.io/alvaromontoro/pen/oNVQeBR"
+                        >Logo Carousel Blur</a
+                    >
+                    - by Alvaro Montoro
+                </p>
+
+                <p>
+                    <a href="https://www.codelove.space">www.codelove.space</a>
+                </p>
+
+                <p>&copy; <span id="currentYear"></span> Yerevan</p>
+
+                <script>
+                    document.getElementById("currentYear").textContent =
+                        new Date().getFullYear();
+                </script>
+            </footer>
+            <!-- </section> -->
+        </div>
+    </body>
+</html>
